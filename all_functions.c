@@ -7,7 +7,7 @@
  */
 int _putchar(char ch)
 {
-    return (write(1, &ch, 1));
+	return (write(1, &ch, 1));
 }
 
 /**
@@ -17,7 +17,7 @@ int _putchar(char ch)
  */
 int _putstring(char *str)
 {
-    return (write(1, str, strlen(str)));
+	return (write(1, str, strlen(str)));
 }
 
 /**
@@ -28,26 +28,27 @@ int _putstring(char *str)
  */
 int _check_arg(char ch, va_list args)
 {
-    int num, len = 0;
-    char *str;
-    if (ch == 'c')
-    {
-        len += _putchar(va_arg(args, int));
-    }
-    else if (ch == 's')
-    {
-        str = va_arg(args, char *);
-        len += _putstring(STRING);
-    }
-    else if (ch == '%')
-    {
-        len += _putchar('%');
-    }
-    else
-    {
-        len += _putchar('%');
-        len += _putchar(ch);
-    }
+	int num, len = 0;
+	char *str;
 
-    return (len);
+	if (ch == 'c')
+	{
+		len += _putchar(va_arg(args, int));
+	}
+	else if (ch == 's')
+	{
+		str = va_arg(args, char *);
+		len += _putstring(STRING);
+	}
+	else if (ch == '%')
+	{
+		len += _putchar('%');
+	}
+	else
+	{
+		len += _putchar('%');
+		len += _putchar(ch);
+	}
+
+	return (len);
 }
