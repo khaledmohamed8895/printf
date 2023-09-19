@@ -83,6 +83,9 @@ int _check_arg(char ch, va_list args)
 		_my_putint(num);
 		len += _num_length(num);
 		break;
+	case 'b':
+		len += _print_binary(va_arg(args, unsigned int));
+		break;
 	case '%':
 		len += _myputchar('%');
 		break;
