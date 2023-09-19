@@ -1,5 +1,5 @@
 #ifndef MAIN_H
-#define MAIN_h
+#define MAIN_H
 /* Define Libs */
 #include <stdio.h>
 #include <string.h>
