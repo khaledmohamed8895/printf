@@ -6,7 +6,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#define STRING (str ? str : "(null)")
 int _printf(const char *format, ...);
 int _putchar(char ch);
 int _putstring(char *str);

@@ -31,24 +31,22 @@ int _check_arg(char ch, va_list args)
 	int num, len = 0;
 	char *str;
 
-	if (ch == 'c')
+	switch (ch)
 	{
+	case 'c':
 		len += _putchar(va_arg(args, int));
-	}
-	else if (ch == 's')
-	{
+		break;
+	case 's':
 		str = va_arg(args, char *);
-		len += _putstring(STRING);
-	}
-	else if (ch == '%')
-	{
+		len += _putstring(str);
+		break;
+	case '%':
 		len += _putchar('%');
-	}
-	else
-	{
+		break;
+	default:
 		len += _putchar('%');
 		len += _putchar(ch);
+		break;
 	}
-
 	return (len);
 }
