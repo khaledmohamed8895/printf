@@ -77,12 +77,6 @@ int _check_arg(char ch, va_list args)
 		str = va_arg(args, char *);
 		len += _putstring(str ? str : "(null)");
 		break;
-	case 'd':
-	case 'i':
-		num = va_arg(args, int);
-		_my_putint(num);
-		len += _num_length(num);
-		break;
 	case '%':
 		len += _myputchar('%');
 		break;
